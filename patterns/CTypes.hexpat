@@ -37,6 +37,23 @@ namespace CTypes {
   using SMatrix4x4 = TTypes::Matrix4x4<s32>;
   
   
+  struct UV : TTypes::Vector2<float> {
+    float u = x;
+    float v = y;
+  };
+  using Position = TTypes::Vector3<float>;
+  namespace Rotation {
+    struct PYR : TTypes::Vector3<float> {
+      float pitch = x;
+      float yaw   = y;
+      float roll  = z;
+    };
+    
+    using Quat = TTypes::Vector4<float>;
+  }
+  using Scale = TTypes::Vector3<float>;
+  
+  
   struct FBox {
     FVector3 Min, Max;
   };
@@ -58,8 +75,12 @@ namespace CTypes {
       float h, s, l;
     };
 	
-    using HSV = HSL;
-    using HSB = HSL;
+    struct HSV : HSL {
+      float v = l;
+    };
+    struct HSB : HSL {
+      float b = l;
+    };
   }
   
   struct NormalTangent {
