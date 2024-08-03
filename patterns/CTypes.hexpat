@@ -7,34 +7,34 @@
 #include <TTypes.hexpat>
 
 namespace CTypes {
-  struct FVector2 : TTypes::Vector2<float> {};
-  struct FVector3 : TTypes::Vector3<float> {};
-  struct FVector4 : TTypes::Vector4<float> {};
+  using FVector2 = TTypes::Vector2<float>;
+  using FVector3 = TTypes::Vector3<float>;
+  using FVector4 = TTypes::Vector4<float>;
   
-  struct FMatrix3x3 : TTypes::Matrix3x3<float> {};
-  struct FMatrix3x4 : TTypes::Matrix3x4<float> {};
-  struct FMatrix4x3 : TTypes::Matrix4x3<float> {};
-  struct FMatrix4x4 : TTypes::Matrix4x4<float> {};
+  using FMatrix3x3 = TTypes::Matrix3x3<float>;
+  using FMatrix3x4 = TTypes::Matrix3x4<float>;
+  using FMatrix4x3 = TTypes::Matrix4x3<float>;
+  using FMatrix4x4 = TTypes::Matrix4x4<float>;
   
     
-  struct UVector2 : TTypes::Vector2<u32> {};
-  struct UVector3 : TTypes::Vector3<u32> {};
-  struct UVector4 : TTypes::Vector4<u32> {};
+  using UVector2 = TTypes::Vector2<u32>;
+  using UVector3 = TTypes::Vector3<u32>;
+  using UVector4 = TTypes::Vector4<u32>;
   
-  struct UMatrix3x3 : TTypes::Matrix3x3<u32> {};
-  struct UMatrix3x4 : TTypes::Matrix3x4<u32> {};
-  struct UMatrix4x3 : TTypes::Matrix4x3<u32> {};
-  struct UMatrix4x4 : TTypes::Matrix4x4<u32> {};
+  using UMatrix3x3 = TTypes::Matrix3x3<u32>;
+  using UMatrix3x4 = TTypes::Matrix3x4<u32>;
+  using UMatrix4x3 = TTypes::Matrix4x3<u32>;
+  using UMatrix4x4 = TTypes::Matrix4x4<u32>;
   
   
-  struct SVector2 : TTypes::Vector2<s32> {};
-  struct SVector3 : TTypes::Vector3<s32> {};
-  struct SVector4 : TTypes::Vector4<s32> {};
+  using SVector2 = TTypes::Vector2<s32>;
+  using SVector3 = TTypes::Vector3<s32>;
+  using SVector4 = TTypes::Vector4<s32>;
   
-  struct SMatrix3x3 : TTypes::Matrix3x3<s32> {};
-  struct SMatrix3x4 : TTypes::Matrix3x4<s32> {};
-  struct SMatrix4x3 : TTypes::Matrix4x3<s32> {};
-  struct SMatrix4x4 : TTypes::Matrix4x4<s32> {};
+  using SMatrix3x3 = TTypes::Matrix3x3<s32>;
+  using SMatrix3x4 = TTypes::Matrix3x4<s32>;
+  using SMatrix4x3 = TTypes::Matrix4x3<s32>;
+  using SMatrix4x4 = TTypes::Matrix4x4<s32>;
   
   
   struct FBox {
