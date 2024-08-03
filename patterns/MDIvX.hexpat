@@ -1,5 +1,5 @@
 // Created by PredatorCZ, Brooen
-
+#pragma magic [ 4D 44 49 ] @ 0x00
 struct CString {
     char name[];
 };
