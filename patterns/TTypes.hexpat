@@ -17,19 +17,19 @@ namespace TTypes {
   
   
   struct Matrix3x3<T> {
-    T a, b, c;
+    Vector3<t> a, b, c;
   };
   
   struct Matrix3x4<T> {
-    T a, b, c, d;
+    Vector3<T> a, b, c, d;
   };
   
   struct Matrix4x3<T> {
-    T a, b, c;
+    Vector4<T> a, b, c;
   };
   
   struct Matrix4x4<T> {
-    T a, b, c, d;
+    Vector4<T> a, b, c, d;
   };
   
   
