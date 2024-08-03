@@ -37,10 +37,25 @@ namespace CTypes {
   using SMatrix4x4 = TTypes::Matrix4x4<s32>;
   
   
+  using U8Array  = TTypes::Array<u32, u8>;
+  using U16Array = TTypes::Array<u32, u16>;
+  using U32Array = TTypes::Array<u32, u32>;
+  using U64Array = TTypes::Array<u32, u64>;
+  
+  using S8Array  = TTypes::Array<u32, s8>;
+  using S16Array = TTypes::Array<u32, s16>;
+  using S32Array = TTypes::Array<u32, s32>;
+  using S64Array = TTypes::Array<u32, s64>;
+  
+  using F32Array = TTypes::Array<u32, float>;
+  using F64Array = TTypes::Array<u32, double>;
+  
+  
   struct UV : TTypes::Vector2<float> {
     float u = x;
     float v = y;
   };
+  
   using Position = TTypes::Vector3<float>;
   namespace Rotation {
     struct PYR : TTypes::Vector3<float> {
@@ -81,6 +96,14 @@ namespace CTypes {
     struct HSB : HSL {
       float b = l;
     };
+  }
+  
+  namespace Color {
+    using RGB  = Colour::RGB;
+    using RGBA = Colour::RGBA;
+    using HSL  = Colour::HSL;
+    using HSV  = Colour::HSV;
+    using HSB  = Colour::HSB;
   }
   
   struct NormalTangent {

@@ -33,23 +33,15 @@ namespace TTypes {
   };
   
   
-  namespace Pair {
-    struct Same<T> {
-      T a, b;
-    };
-    
-    struct Diff<T, U> {
-      T a;
-      U b;
-    };
-  }
-  
+  struct Pair<T, U> {
+    T a;
+    U b;
+  };
   
   struct Array<T, U> {
     T Count;
     U Data [Count];
   };
-  
   
   union Either<T, U> {
     T a;
