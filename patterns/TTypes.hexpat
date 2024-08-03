@@ -17,7 +17,7 @@ namespace TTypes {
   
   
   struct Matrix3x3<T> {
-    Vector3<t> a, b, c;
+    Vector3<T> a, b, c;
   };
   
   struct Matrix3x4<T> {
