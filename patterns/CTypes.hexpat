@@ -5,6 +5,7 @@
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
 #include <TTypes.hexpat>
+#include "std/math.pat"
 
 namespace CTypes {
   struct FVector2 : TTypes::Vector2<float> {};
@@ -62,10 +63,18 @@ namespace CTypes {
 	using HSB = HSL;
   }
   struct NormalTangent {
-    s32 CompressedData;
-    float x = (CompressedData & 0x3ff) / 1023.0 [[export]];
-    float y = ((CompressedData >> 10) & 0x3ff) / 1023.0 [[export]];
-    float z = ((CompressedData >> 20) & 0x3ff) / 1023.0 [[export]];
-    float w = ((CompressedData >> 30) & 3) / 1023.0 [[export]];
-  };
+    float CompressedData;
+    float f = (CompressedData);
+
+    float xt = CompressedData / 1.0;
+    float x = (xt - std::math::floor(xt)) * 2.0 - 1.0 [[export]]; 
+
+    float yt = CompressedData / 256.0;
+    float y = (yt - std::math::floor(yt)) * 2.0 - 1.0 [[export]]; 
+
+    float zt = CompressedData / 65535.0;
+    float z = (zt - std::math::floor(zt)) * 2.0 - 1.0 [[export]]; 
+
+    float w = std::math::sign(f) [[export]];
+  }; // credit SK83RJOSH for their help on this
 }
