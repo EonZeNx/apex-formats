@@ -15,9 +15,9 @@ using FVec2 = CTypes::FVector2;
 using FVec3 = CTypes::FVector3;
 using FVec4 = CTypes::FVector4;
 
-using NVec = TTypes::Vector4<u8>;
+using NVec = CTypes::NormalTangent;
 using DVec = TTypes::Vector4<u16>;
-using TVec = TTypes::Vector4<u8>;
+using TVec = CTypes::NormalTangent;
 
 using RbmBox = CTypes::FBoxR;
 
@@ -97,7 +97,7 @@ struct MaterialCarLight {
   
   FVec4 m_DiffuseModulator;
   FVec2 tiling [2];
-  padding [1028];
+  padding [1020];
 };
 
 struct MeshDeform {

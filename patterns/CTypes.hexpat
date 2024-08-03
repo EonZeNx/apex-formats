@@ -1,4 +1,4 @@
-// Created by EonZeNx
+// Created by EonZeNx, Brooen
 // Common types
 #pragma once
 
@@ -45,7 +45,6 @@ namespace CTypes {
     FVector3 Max, Min;
   };
   
-  
   namespace Colour {
     struct RGB {
       float r, g, b;
@@ -62,4 +61,11 @@ namespace CTypes {
 	using HSV = HSL;
 	using HSB = HSL;
   }
+  struct NormalTangent {
+    s32 CompressedData;
+    float x = (CompressedData & 0x3ff) / 1.0 [[export]];
+    float y = ((CompressedData >> 10) & 0x3ff) / 1.0 [[export]];
+    float z = ((CompressedData >> 20) & 0x3ff) / 1.0 [[export]];
+    float w = ((CompressedData >> 30) & 3) / 1.0 [[export]];
+  };
 }
