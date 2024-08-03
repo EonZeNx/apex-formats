@@ -63,9 +63,9 @@ namespace CTypes {
   }
   struct NormalTangent {
     s32 CompressedData;
-    float x = (CompressedData & 0x3ff) / 1.0 [[export]];
-    float y = ((CompressedData >> 10) & 0x3ff) / 1.0 [[export]];
-    float z = ((CompressedData >> 20) & 0x3ff) / 1.0 [[export]];
-    float w = ((CompressedData >> 30) & 3) / 1.0 [[export]];
+    float x = (CompressedData & 0x3ff) / 1023.0 [[export]];
+    float y = ((CompressedData >> 10) & 0x3ff) / 1023.0 [[export]];
+    float z = ((CompressedData >> 20) & 0x3ff) / 1023.0 [[export]];
+    float w = ((CompressedData >> 30) & 3) / 1023.0 [[export]];
   };
 }
