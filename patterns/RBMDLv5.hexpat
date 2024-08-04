@@ -96,8 +96,8 @@ struct MaterialCarLight {
   float         m_SpecularFresnel;
   
   FVec4 m_DiffuseModulator;
-  FVec2 tiling [2];
-  padding [1020];
+  FVec2 tiling;
+  padding [1028]; // could be control point remap table?
 };
 
 struct MeshDeform {
