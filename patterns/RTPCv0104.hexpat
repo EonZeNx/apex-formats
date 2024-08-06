@@ -96,4 +96,4 @@ struct RtpcV0104File {
   RtpcV0104Container Container [Header.ContainerCount];
 };
 
-RtpcV0104File File @ 0;
+RtpcV0104File File @ 0x00;
