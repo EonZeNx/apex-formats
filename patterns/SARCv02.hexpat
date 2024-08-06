@@ -31,6 +31,4 @@ struct SarcV02File {
   SarcV02Entry Entries [while(Header.Size - $ > sizeof(SarcV02Header))];
 };
 
-
-
 SarcV02File File @ 0x00;

@@ -1,29 +1,40 @@
-// Created by Brooen
-#pragma magic [ 50 46 49 ] @ 0x00
+// Created by Brooen, EonZeNx
+
 #include <std/string.pat>
 
-struct Matrix {
-    float tm[16];
+// Extras > Settings > Folders > Add > MY_FOLDER > Confirm
+// Should look like: MY_FOLDER/patterns/*.hexpat
+#include <TTypes.hexpat>
+#include <CTypes.hexpat>
+
+#pragma magic [ 50 46 49 ] @ 0x00
+
+using FMat3x4 = CTypes::FMatrix3x4;
+using FMat4x4 = CTypes::FMatrix4x4;
+
+struct PfiV01Instance
+{
+  u32 Hash;
+  std::string::SizedString<u32> FilePath;
+  FMat4x4 Matrix;
 };
 
-struct Header {
+struct PfiV01Header {
   u32 Magic;
   u32 Version;
   u32 unk;
   u32 NumInstances;
-  Matrix Matrix;
-  padding[48];
+  FMat4x4 Matrix;
 };
 
-struct file
+struct PfiV01File
 {
-padding [4];
-std::string::SizedString<u32> FilePath;
-Matrix Matrix;
+  PfiV01Header Header;
+  
+  // Padding?
+  FMat3x4 Unknown;
+  
+  PfiV01Instance Instances [Header.NumInstances];
 };
-struct final
-{
-Header Header;
-file File[Header.NumInstances];
-};
-final Final @0;
+
+PfiV01File File @ 0x00;
