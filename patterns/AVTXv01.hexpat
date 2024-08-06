@@ -58,4 +58,4 @@ struct AvtxFile {
   AvtxStream Streams[MAX_STREAMS];
 };
 
-AvtxFile file @ 0;
+AvtxFile file @ 0x00;

@@ -4,47 +4,63 @@
 
 namespace TTypes {
   struct Vector2<T> {
-    T x, y;
+    T x [[export]];
+    T y [[export]];
   };
   
   struct Vector3<T> {
-    T x, y, z;
+    T x [[export]];
+    T y [[export]];
+    T z [[export]];
   };
   
   struct Vector4<T> {
-    T x, y, z, w;
+    T x [[export]];
+    T y [[export]];
+    T z [[export]];
+    T w [[export]];
   };
   
   
   struct Matrix3x3<T> {
-    Vector3<T> a, b, c;
+    Vector3<T> a [[export]];
+    Vector3<T> b [[export]];
+    Vector3<T> c [[export]];
   };
   
   struct Matrix3x4<T> {
-    Vector3<T> a, b, c, d;
+    Vector3<T> a [[export]];
+    Vector3<T> b [[export]];
+    Vector3<T> c [[export]];
+    Vector3<T> d [[export]];
   };
   
   struct Matrix4x3<T> {
-    Vector4<T> a, b, c;
+    Vector4<T> a [[export]];
+    Vector4<T> b [[export]];
+    Vector4<T> c [[export]];
   };
   
   struct Matrix4x4<T> {
-    Vector4<T> a, b, c, d;
+    Vector4<T> a [[export]];
+    Vector4<T> b [[export]];
+    Vector4<T> c [[export]];
+    Vector4<T> d [[export]];
   };
   
   
   struct Pair<T, U> {
-    T a;
-    U b;
+    T a [[export]];
+    U b [[export]];
   };
   
   struct Array<T, U> {
-    T Count;
-    U Data [Count];
+    T Count [[export]];
+    U Data [Count] [[export]];
   };
   
   union Either<T, U> {
-    T a;
-    U b;
+    T a [[export]];
+    U b [[export]];
   };
 }
