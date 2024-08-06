@@ -1,8 +1,8 @@
-// Created by PredatorCZ, Brooen, AxCut
+// Created by PredatorCZ, Brooen, AxCut, EonZeNx
 
-import std.core;
-import std.mem;
-import std.io;
+#include <std/mem.pat>
+#include <std/core.pat>
+#include <std/io.pat>
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
@@ -49,7 +49,9 @@ struct MdiV12File {
   MdiV12Header Header;
   NullString Paths [Header.PathCount];
   
-  FMat4x4 Tms [Header.InstanceCount] @ Header.TmOffset + sizeof(Header);
+  $ = Header.TmOffset + sizeof(Header);
+  
+  FMat4x4 Tms [Header.InstanceCount];;
   u16 PathIndices [Header.InstanceCount];
   u16 Unk0Array [Header.InstanceCount];
   u96 Null0Array [Header.InstanceCount];
