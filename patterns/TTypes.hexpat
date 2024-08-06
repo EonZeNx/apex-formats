@@ -5,7 +5,7 @@
 namespace TTypes {
   struct Vector2<T> {
     T x [[export]];
-	T y [[export]];
+    T y [[export]];
   };
   
   struct Vector3<T> {
