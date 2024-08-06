@@ -382,4 +382,4 @@ struct RbmFile
   // RbmModel array [3];
 };
 
-RbmFile File @ 0;
+RbmFile File @ 0x00;

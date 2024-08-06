@@ -117,4 +117,4 @@ struct RtpcV01File {
   RtpcV01Container Container;
 };
 
-RtpcV01File File @ 0;
+RtpcV01File File @ 0x00;

@@ -25,4 +25,4 @@ struct TabV02File {
   TabV02Entry Entries [while(!std::mem::eof())];
 };
 
-TabV02File File @ 0;
+TabV02File File @ 0x00;

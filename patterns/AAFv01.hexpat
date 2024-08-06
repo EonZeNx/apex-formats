@@ -37,4 +37,4 @@ struct AafV01File {
   AafV01Chunk  Chunks [Header.ChunkCount];
 };
 
-AafV01File File @ 0;
+AafV01File File @ 0x00;

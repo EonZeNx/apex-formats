@@ -118,4 +118,4 @@ struct RtpcV03File {
   RtpcV03Container Container;
 };
 
-RtpcV03File File @ 0;
+RtpcV03File File @ 0x00;
