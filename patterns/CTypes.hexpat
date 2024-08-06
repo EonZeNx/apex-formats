@@ -54,16 +54,16 @@ namespace CTypes {
   
   
   struct UV : TTypes::Vector2<float> {
-    float u = x;
-    float v = y;
+    float u = x [[export]];
+    float v = y [[export]];
   };
   
   using Position = TTypes::Vector3<float>;
   namespace Rotation {
     struct PYR : TTypes::Vector3<float> {
-      float pitch = x;
-      float yaw   = y;
-      float roll  = z;
+      float pitch = x [[export]];
+      float yaw   = y [[export]];
+      float roll  = z [[export]];
     };
     
     using Quat = TTypes::Vector4<float>;
@@ -72,31 +72,37 @@ namespace CTypes {
   
   
   struct FBox {
-    FVector3 Min, Max;
+    FVector3 Min [[export]];
+    FVector3 Max [[export]];
   };
   
   struct FBoxR {
-    FVector3 Max, Min;
+    FVector3 Max [[export]];
+    FVector3 Min [[export]];
   };
   
   namespace Colour {
     struct RGB {
-      float r, g, b;
+      float r [[export]];
+      float g [[export]];
+      float b [[export]];
     };
 	
     struct RGBA : RGB {
-      float a;
+      float a [[export]];
     };
 	
     struct HSL {
-      float h, s, l;
+      float h [[export]];
+      float s [[export]];
+      float l [[export]];
     };
 	
     struct HSV : HSL {
-      float v = l;
+      float v = l [[export]];
     };
     struct HSB : HSL {
-      float b = l;
+      float b = l [[export]];
     };
   }
   

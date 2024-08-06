@@ -27,7 +27,7 @@ struct AvtxHeader {
   u16  Height;
   u16  Depth;
   
-  u16 Flags[[no_unique_address]];
+  u16 Flags [[no_unique_address]];
   TextureFlags FlagType;
   padding [1];
   
@@ -55,7 +55,7 @@ struct AvtxStream {
 
 struct AvtxFile {
   AvtxHeader Header;
-  AvtxStream Streams[MAX_STREAMS];
+  AvtxStream Streams [MAX_STREAMS];
 };
 
 AvtxFile file @ 0x00;

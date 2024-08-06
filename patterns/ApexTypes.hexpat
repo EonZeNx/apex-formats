@@ -8,7 +8,10 @@
 
 namespace Apex {
   struct ObjectId {
-    u16 a, b, c, userData;
+    u16 a [[export]];
+    u16 b [[export]];
+    u16 c [[export]];
+    u16 userData [[export]];
   };
   
   using Event  = TTypes::Pair<u32, u32>;
