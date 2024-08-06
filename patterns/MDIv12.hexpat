@@ -2,14 +2,13 @@
 
 import std.core;
 import std.mem;
-import std.string;
 import std.io;
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
 #include <TTypes.hexpat>
 #include <CTypes.hexpat>
-#include <ApexTypes.hexpat>
+#include <PTypes.hexpat>
 
 #pragma pattern_limit 0x1000000
 
@@ -18,6 +17,7 @@ import std.io;
 
 using FBox = CTypes::FBox;
 using FMat4x4 = CTypes::FMatrix4x4;
+using NullString = PTypes::NullString;
 
 struct MdiV12Header {
   u32 Id;
@@ -31,40 +31,31 @@ struct MdiV12Header {
 };
 
 fn index_to_file_path(auto i) {
-    return std::format("{}", Paths[i]);
+    return std::format("{}", File.Paths[i]);
 };
 
 struct MdiV12Instance { 
   u64 i = std::core::array_index();
   
-  FMat4x4 Coords @ addressof(Tms[i]);
-  u16 PathIndex @ addressof(PathIndices[i]) [[format("index_to_file_path")]];
-  u16 Unk0 @ addressof(Unk0Array[i]);
-  u96 Null0 @ addressof(Null0Array[i]);
-  float Unk1 @ addressof(Unk1Array[i]);
-  FBox BoundingBox @ addressof(BoundingBoxes[i]);
+  FMat4x4 Coords @ addressof(File.Tms[i]);
+  u16 PathIndex @ addressof(File.PathIndices[i]) [[format("index_to_file_path")]];
+  u16 Unk0 @ addressof(File.Unk0Array[i]);
+  u96 Null0 @ addressof(File.Null0Array[i]);
+  float Unk1 @ addressof(File.Unk1Array[i]);
+  FBox BoundingBox @ addressof(File.BoundingBoxes[i]);
 };
 
 struct MdiV12File {
   MdiV12Header Header;
-  std::string::NullString Paths [Header.PathCount];
+  NullString Paths [Header.PathCount];
   
-  FMat4x4 Tms [Header.InstanceCount] @ Header.TmOffset + sizeof(Header) [[hidden]];
-  u16 PathIndices [Header.InstanceCount] [[hidden]];
-  u16 Unk0 [Header.InstanceCount] [[hidden]];
-  u96 Null0 [Header.InstanceCount] [[hidden]];
-  float Unk1 [Header.InstanceCount] [[hidden]];
-  FBox BoundingBoxes [Header.InstanceCount] [[hidden]];
+  FMat4x4 Tms [Header.InstanceCount] @ Header.TmOffset + sizeof(Header);
+  u16 PathIndices [Header.InstanceCount];
+  u16 Unk0Array [Header.InstanceCount];
+  u96 Null0Array [Header.InstanceCount];
+  float Unk1Array [Header.InstanceCount];
+  FBox BoundingBoxes [Header.InstanceCount];
 };
 
-MdiV12Header Header @ 0x00;
-std::string::NullString Paths [Header.PathCount] @ $;
-
-FMat4x4 Tms [Header.InstanceCount] @ sizeof(Header) + Header.TmOffset [[hidden]];
-u16 PathIndices [Header.InstanceCount] @ $ [[hidden]];
-u16 Unk0Array [Header.InstanceCount] @ $ [[hidden]];
-u96 Null0Array [Header.InstanceCount] @ $ [[hidden]];
-float Unk1Array [Header.InstanceCount] @ $ [[hidden]];
-FBox BoundingBoxes [Header.InstanceCount] @ $ [[hidden]];
-  
-MdiV12Instance Instances [Header.InstanceCount];
+MdiV12File File @ 0x00;
+MdiV12Instance Instances [File.Header.InstanceCount] @ $;
