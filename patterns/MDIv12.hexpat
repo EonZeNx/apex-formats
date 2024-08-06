@@ -51,7 +51,7 @@ struct MdiV12File {
   
   $ = Header.TmOffset + sizeof(Header);
   
-  FMat4x4 Tms [Header.InstanceCount];;
+  FMat4x4 Tms [Header.InstanceCount];
   u16 PathIndices [Header.InstanceCount];
   u16 Unk0Array [Header.InstanceCount];
   u96 Null0Array [Header.InstanceCount];
