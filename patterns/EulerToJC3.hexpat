@@ -2,14 +2,14 @@
 // Expects FVector3 
 #pragma once
 
-#include <std/math.pat>
-#include <std/io.pat>
+import std.math;
+import std.io;
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
-#include <TTypes.hexpat>
-#include <CTypes.hexpat>
-#include <ApexTypes.hexpat>
+import TTypes;
+import CTypes;
+import ApexTypes;
 
 using FVec3 = CTypes::FVector3;
 using FMat3x3 = CTypes::FMatrix3x3;
@@ -85,24 +85,19 @@ fn EulerToRz(ref FVec3 vec) {
 FVec3 Euler @ 0x00;
 
 FMat3x3 rx = EulerToRx(Euler);
+std::print("---");
 std::print("rx");
-std::print("a: {}, {}, {}", rx.a.x, rx.a.y, rx.a.z);
-std::print("b: {}, {}, {}", rx.b.x, rx.b.y, rx.b.z);
-std::print("c: {}, {}, {}", rx.c.x, rx.c.y, rx.c.z);
+std::print("{}", rx);
 
 FMat3x3 ry = EulerToRy(Euler);
 std::print("---");
 std::print("ry");
-std::print("a: {}, {}, {}", ry.a.x, ry.a.y, ry.a.z);
-std::print("b: {}, {}, {}", ry.b.x, ry.b.y, ry.b.z);
-std::print("c: {}, {}, {}", ry.c.x, ry.c.y, ry.c.z);
+std::print("{}", ry);
 
 FMat3x3 rz = EulerToRz(Euler);
 std::print("---");
 std::print("rz");
-std::print("a: {}, {}, {}", rz.a.x, rz.a.y, rz.a.z);
-std::print("b: {}, {}, {}", rz.b.x, rz.b.y, rz.b.z);
-std::print("c: {}, {}, {}", rz.c.x, rz.c.y, rz.c.z);
+std::print("{}", rz);
 
 
 FMat3x3 rxRot;
@@ -112,9 +107,7 @@ rxRot.c.z = 1.f;
 
 std::print("---");
 std::print("rxRot");
-std::print("a: {}, {}, {}", rxRot.a.x, rxRot.a.y, rxRot.a.z);
-std::print("b: {}, {}, {}", rxRot.b.x, rxRot.b.y, rxRot.b.z);
-std::print("c: {}, {}, {}", rxRot.c.x, rxRot.c.y, rxRot.c.z);
+std::print("{}", rxRot);
 
 
 
@@ -206,10 +199,7 @@ ryRot.c.z = CalcZRot(rx.c, rxRot);
 
 std::print("---");
 std::print("ryRot");
-std::print("a: {}, {}, {}", ryRot.a.x, ryRot.a.y, ryRot.a.z);
-std::print("b: {}, {}, {}", ryRot.b.x, ryRot.b.y, ryRot.b.z);
-std::print("c: {}, {}, {}", ryRot.c.x, ryRot.c.y, ryRot.c.z);
-
+std::print("{}", ryRot);
 
 
 FMat3x3 rzRot;
@@ -227,9 +217,7 @@ rzRot.c.z = CalcZRot(ry.c, ryRot);
 
 std::print("---");
 std::print("rzRot");
-std::print("a: {}, {}, {}", rzRot.a.x, rzRot.a.y, rzRot.a.z);
-std::print("b: {}, {}, {}", rzRot.b.x, rzRot.b.y, rzRot.b.z);
-std::print("c: {}, {}, {}", rzRot.c.x, rzRot.c.y, rzRot.c.z);
+std::print("{}", rzRot);
 
 
 
@@ -248,7 +236,5 @@ result.c.z = CalcZRot(rz.c, rzRot);
 
 std::print("---");
 std::print("result");
-std::print("a: {}, {}, {}", result.a.x, result.a.y, result.a.z);
-std::print("b: {}, {}, {}", result.b.x, result.b.y, result.b.z);
-std::print("c: {}, {}, {}", result.c.x, result.c.y, result.c.z);
+std::print("{}", result);
 std::print("---");
