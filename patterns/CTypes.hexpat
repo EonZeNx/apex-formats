@@ -2,6 +2,7 @@
 // Common types
 #pragma once
 
+import std.io;
 import std.math;
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
@@ -86,17 +87,17 @@ namespace CTypes {
       float r [[export]];
       float g [[export]];
       float b [[export]];
-    };
+    } [[format("CTypes::Fmt::rgb_format")]];
 	
     struct RGBA : RGB {
       float a [[export]];
-    };
+    } [[format("CTypes::Fmt::rgba_format")]];
 	
     struct HSL {
       float h [[export]];
       float s [[export]];
       float l [[export]];
-    };
+    } [[format("CTypes::Fmt::hsl_format")]];
 	
     struct HSV : HSL {
       float v = l [[export]];
@@ -104,6 +105,20 @@ namespace CTypes {
     struct HSB : HSL {
       float b = l [[export]];
     };
+	
+	namespace Fmt {
+	  fn rgb_format(ref auto colour) {
+	    return std::format("({:f}, {:f}, {:f})", colour.r, colour.g, colour.b);
+	  };
+	  
+	  fn rgba_format(ref auto colour) {
+	    return std::format("({:f}, {:f}, {:f}, {:f})", colour.r, colour.g, colour.b, colour.a);
+	  };
+	  
+	  fn hsl_format(ref auto colour) {
+	    return std::format("({:f}, {:f}, {:f})", colour.h, colour.s, colour.l);
+	  };
+	}
   }
   
   namespace Color {

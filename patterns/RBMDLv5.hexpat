@@ -1,6 +1,8 @@
 // Created by Brooen, EonZeNx
 #pragma once
 
+import std.string;
+
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
 import TTypes;
@@ -20,6 +22,8 @@ using DVec = TTypes::Vector4<u16>;
 using TVec = CTypes::NormalTangent;
 
 using RbmBox = CTypes::FBoxR;
+
+using Filepath = std::string::SizedString<u32>;
 
 
 struct Header {
@@ -206,22 +210,6 @@ struct ControlPointRemap {
   
   if (controlpointremaptest == 0) {
     padding [1024];
-  }
-};
-
-struct Filepath {
-  u32 PathLength;
-
-  if (PathLength == 0) {
-    u32 nopath[[no_unique_address]];
-  }
-
-  if  (PathLength > 1000)  {
-    break;
-  }
-
-  if (PathLength != 0) {
-    char Path[PathLength];
   }
 };
 
