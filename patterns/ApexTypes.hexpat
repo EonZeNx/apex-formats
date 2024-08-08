@@ -4,7 +4,7 @@
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
-#include <TTypes.hexpat>
+import TTypes;
 
 namespace Apex {
   struct ObjectId {

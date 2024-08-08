@@ -2,6 +2,7 @@
 
 #pragma array_limit 100000000
 #pragma pattern_limit 100000000
+
 #pragma magic [ 41 56 54 58 ] @ 0x00
 
 #define MAX_STREAMS 8

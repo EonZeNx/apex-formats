@@ -2,11 +2,11 @@
 // Common types
 #pragma once
 
-#include <std/math.pat>
+import std.math;
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
-#include <TTypes.hexpat>
+import TTypes;
 
 namespace CTypes {
   using FVector2 = TTypes::Vector2<float>;

@@ -6,13 +6,11 @@ struct VegcHeader {
   u32 InstanceCount;
 };
 
-struct VegcData
-{
+struct VegcData {
   float Data [5]; // i got no clue
 };
 
-struct VegcFile
-{
+struct VegcFile {
   VegcHeader Header;
   VegcData   Data [Header.InstanceCount];
 };

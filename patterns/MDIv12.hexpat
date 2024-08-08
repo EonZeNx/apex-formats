@@ -1,14 +1,14 @@
 // Created by PredatorCZ, Brooen, AxCut, EonZeNx
 
-#include <std/mem.pat>
-#include <std/core.pat>
-#include <std/io.pat>
+import std.mem;
+import std.core;
+import std.io;
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
-#include <TTypes.hexpat>
-#include <CTypes.hexpat>
-#include <PTypes.hexpat>
+import TTypes;
+import CTypes;
+import PTypes;
 
 #pragma pattern_limit 0x1000000
 

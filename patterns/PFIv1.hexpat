@@ -1,11 +1,11 @@
 // Created by Brooen, EonZeNx
 
-#include <std/string.pat>
+import std.string;
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
-#include <TTypes.hexpat>
-#include <CTypes.hexpat>
+import TTypes;
+import CTypes;
 
 #pragma magic [ 50 46 49 ] @ 0x00
 
