@@ -1,7 +1,7 @@
 // Created by EonZeNx
 #pragma once
 
-#include <std/mem.pat>
+import std.mem;
 
 // Includes magic and version
 #pragma magic [ 54 41 42 00 02 ] @ 0x00

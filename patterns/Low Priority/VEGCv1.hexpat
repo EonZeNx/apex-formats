@@ -1,19 +1,18 @@
 // Created by Brooen
 
-
-struct Header {
+struct VegcHeader {
   u32 Version;
-  u32 unk;
-  u32 NumInstances;
+  u32 Unk0;
+  u32 InstanceCount;
 };
 
-struct file
-{
-float data[5]; // i got no clue
+struct VegcData {
+  float Data [5]; // i got no clue
 };
-struct final
-{
-Header Header;
-file File[Header.NumInstances];
+
+struct VegcFile {
+  VegcHeader Header;
+  VegcData   Data [Header.InstanceCount];
 };
-final Final @0;
+
+VegcFile File @ 0x00;

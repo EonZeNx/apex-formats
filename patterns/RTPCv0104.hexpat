@@ -1,15 +1,15 @@
 // Created by EonZeNx
 #pragma once
 
-#include <std/mem.pat>
-#include <std/sys.pat>
-#include <std/string.pat>
+import std.mem;
+import std.sys;
+import std.string;
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
-#include <TTypes.hexpat>
-#include <CTypes.hexpat>
-#include <ApexTypes.hexpat>
+import TTypes;
+import CTypes;
+import ApexTypes;
 
 #pragma magic [ 01 04 00 ?? ] @ 0x00
 

@@ -1,7 +1,7 @@
 // Created by EonZeNx
 #pragma once
 
-#include <std/string.pat>
+import std.string;
 
 #pragma array_limit 0x1000000
 #pragma pattern_limit 0x1000000

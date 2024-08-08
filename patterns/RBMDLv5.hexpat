@@ -3,8 +3,8 @@
 
 // Extras > Settings > Folders > Add > MY_FOLDER > Confirm
 // Should look like: MY_FOLDER/patterns/*.hexpat
-#include <CTypes.hexpat>
-#include <TTypes.hexpat>
+import TTypes;
+import CTypes;
 
 #pragma array_limit 10000000000000000
 #pragma pattern_limit 10000000000000000

@@ -1,8 +1,8 @@
 // Created by EonZeNx
 #pragma once
 
-#include <std/mem.pat>
-#include <std/string.pat>
+import std.mem;
+import std.string;
 
 // Includes magic and version
 #pragma magic [ 04 00 00 00 53 41 52 43 02 ] @ 0x00
