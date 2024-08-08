@@ -1,8 +1,8 @@
 // Created by EonZeNx
 #pragma once
 
-#include <std/mem.pat>
-#include <std/string.pat>
+import std.mem;
+import std.string;
 
 struct TocEntry {
   std::string::SizedString<u32> FilePath;
