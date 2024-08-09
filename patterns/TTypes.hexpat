@@ -56,15 +56,22 @@ namespace TTypes {
     U b [[export]];
   } [[format("TTypes::Fmt::pair_format")]];
   
+  union Either<T, U> {
+    T a [[export]];
+    U b [[export]];
+  } [[format("TTypes::Fmt::either_format")]];
+  
+  
+  struct Option<T> {
+    bool IsSome [[export]];
+    T Data [[export]];
+  } [[format("TTypes::Fmt::option_format")]];
+  
   struct Array<T, U> {
     T Count [[export]];
     U Data [Count] [[export]];
   };
   
-  union Either<T, U> {
-    T a [[export]];
-    U b [[export]];
-  } [[format("TTypes::Fmt::either_format")]];
   
   namespace Fmt {
     fn vec2_format(ref auto vec) {
@@ -101,6 +108,10 @@ namespace TTypes {
 	
     fn either_format(ref auto either) {
       return std::format("{} <-> {}", either.a, either.b);
+    };
+	
+    fn option_format(ref auto option) {
+      return std::format("IsSome {}", option.IsSome);
     };
   }
 }

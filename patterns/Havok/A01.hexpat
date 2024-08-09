@@ -13,9 +13,10 @@ import PTypes;
 using NullString = PTypes::NullString;
 
 
-enum HkType {
+enum HkType : u8 {
   Unknown,
   None,
+  
   Void,
   Bool,
   Char,
@@ -51,6 +52,37 @@ enum HkType {
   StringPointer,
   
   Struct,
+};
+
+enum HkFlags : u8 {
+  Unknown,
+  None,
+  NotOwned,
+  Align8,
+  Align16,
+  SerialiseIgnore
+};
+
+struct HkMember {
+  NullString name;
+  u64 offset;
+  HkType vType;
+  HkType vSubType;
+  NullString className;
+  u32 arrayLength;
+  HkFlags flags;
+};
+
+struct HkDescriptor {
+  NullString name;
+  u64 uuid;
+  HkMember members [];
+};
+
+struct HkObject {
+  NullString name;
+  HkDescriptor descriptor;
+  HkMember members [];
 };
 
 struct HkHeader {
@@ -132,7 +164,6 @@ struct HkData3 {
 };
 
 
-
 struct HkFile {
   HkHeader header;
   HkSection classNamesSection;
@@ -154,6 +185,7 @@ struct HkFile {
   // HkData3 = 12
   HkData3 data3Array [while($ + 12 <= dataSection.offset + dataSection.dataEndOffset)];
 };
+
 
 
 HkFile file @ 0x00;
