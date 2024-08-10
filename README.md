@@ -1,5 +1,8 @@
-# Apex HexPat (ImHex .hexpat)
+# Apex HexPat (archived)
 HexPat formats for [Avalanche Studios](https://avalanchestudios.com/) games.
+
+## Archived note
+This repo was merged into the [apex-resource-index](https://github.com/EonZeNx/apex-resource-index)
 
 # References
 - **[aaronkirkham's jc-model-renderer](https://github.com/aaronkirkham)**: The JC Model Renderer had some very useful info, especially regarding compression.
